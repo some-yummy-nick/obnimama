@@ -1,0 +1,37 @@
+html,
+body {
+	height: 100%;
+}
+
+html{
+	background-color:$background;
+}
+
+body{
+	font-family: $font;
+	font-size: $font-size;
+	line-height: 1.42;
+	color: $color;
+	font-weight: 400;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+a{
+	color: $link_color;
+	text-decoration-skip: ink;
+
+	&:hover{
+		text-decoration: none;
+		color: $link_color_hover;
+	}
+}
+
+.break:after { // разрыв строки вместо использования br
+	content: '\A';
+	white-space: pre;
+}
+
+svg{
+	fill: currentColor;
+}
