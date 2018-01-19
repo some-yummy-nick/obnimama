@@ -26,9 +26,9 @@ var paths = {
 		src: 'source/js/*.js',
 		build: 'build/js'
 	},
-	images:{
+	images: {
 		src: 'source/images/*.+(jpg|JPG|png|svg)',
-		build:'build/images'
+		build: 'build/images'
 	}
 };
 
@@ -93,7 +93,7 @@ function images() {
 		.pipe(gulp.dest(paths.images.build));
 }
 
-function webp ()  {
+function webp() {
 	return gulp.src(paths.images.src)
 		.pipe($.webp({
 			quality: 80,
@@ -105,7 +105,10 @@ function webp ()  {
 
 function html() {
 	return gulp.src(paths.html.src)
-		.pipe(gulp.dest(paths.html.build));
+		.pipe($.jsbeautifier({
+			"indent-with-tabs": true
+		}))
+		.pipe(gulp.dest(paths.html.build))
 }
 
 function js() {
@@ -113,7 +116,7 @@ function js() {
 		.pipe(gulp.dest(paths.js.build));
 }
 
-gulp.task('server', gulp.series(styles, function() {
+gulp.task('server', gulp.series(styles, function () {
 	browserSync.init({
 		notify: false,
 		open: false,
@@ -126,6 +129,8 @@ gulp.task('server', gulp.series(styles, function() {
 function watch() {
 	gulp.watch(paths.styles.all, styles);
 	gulp.watch(paths.images.src, images);
+	gulp.watch(paths.html.src, html);
+	gulp.watch(paths.js.src, js);
 }
 
 gulp.task('default', gulp.series(gulp.parallel('server', images, html, js, watch)));
