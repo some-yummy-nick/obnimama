@@ -21,10 +21,10 @@
 		background-size: contain;
 
 		&_vk{
-			background-image: url('https://icongr.am/simple/vk.svg');
+			background-image: inline('images/base64/vk.svg');
 
 			&:hover{
-				background-image: url('https://icongr.am/simple/vk.svg?colored');
+				background-image:inline('images/base64/vk-hover.svg');
 			}
 		}
 

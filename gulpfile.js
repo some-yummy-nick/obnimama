@@ -15,16 +15,20 @@ var NODE_ENV = process.env.NODE_ENV || 'development';
 var paths = {
 	styles: {
 		src: 'source/scss/style.scss',
-		all: 'source/**/*.scss',
-		build: 'build/css/'
+		all: 'source/scss/*.scss',
+		build: 'build/css'
 	},
 	html: {
 		src: 'source/*.html',
-		build: 'build/'
+		build: 'build'
 	},
 	js: {
 		src: 'source/js/*.js',
 		build: 'build/js'
+	},
+	fonts: {
+		src: 'source/fonts/**/*.*',
+		build: 'build/css/fonts'
 	},
 	images: {
 		src: 'source/images/*.+(jpg|JPG|png|svg)',
@@ -43,20 +47,16 @@ function styles() {
 				require("postcss-font-magician")({
 					variants: {
 						"Roboto": {
-							"400": []
+							"400": ['woff2, woff, ttf'] //поддержка кирилицы
 						}
-					},
-					formats: "woff2 woff ttf"
+					}
 				}),
-				require('postcss-image-inliner')({
-					assetPaths: ["https://icongr.am"]
-				}),
-				require("autoprefixer")(),
+				require("autoprefixer"),
 				require("postcss-easysprites")({
-					imagePath: "images/sprite",
-					spritePath: "images"
+					imagePath: "source/images/sprite",
+					spritePath: "source/images"
 				}),
-				require('postcss-css-variables')(),
+				require('postcss-css-variables'),
 				require('postcss-rgb-plz'),
 				require("css-mqpacker")({
 					sort: true
@@ -109,14 +109,21 @@ function html() {
 			"indent-with-tabs": true
 		}))
 		.pipe(gulp.dest(paths.html.build))
+		.pipe(browserSync.stream());
 }
 
 function js() {
 	return gulp.src(paths.js.src)
-		.pipe(gulp.dest(paths.js.build));
+		.pipe(gulp.dest(paths.js.build))
+		.pipe(browserSync.stream());
 }
 
-gulp.task('server', gulp.series(styles, function () {
+function fonts() {
+	return gulp.src(paths.fonts.src)
+		.pipe(gulp.dest(paths.fonts.build))
+}
+
+gulp.task('server', function () {
 	browserSync.init({
 		notify: false,
 		open: false,
@@ -124,7 +131,7 @@ gulp.task('server', gulp.series(styles, function () {
 			baseDir: "./build"
 		}
 	});
-}));
+});
 
 function watch() {
 	gulp.watch(paths.styles.all, styles);
@@ -133,4 +140,4 @@ function watch() {
 	gulp.watch(paths.js.src, js);
 }
 
-gulp.task('default', gulp.series(gulp.parallel('server', images, html, js, watch)));
+gulp.task('default', gulp.series(gulp.parallel('server', images, styles, html, js, watch, fonts)));

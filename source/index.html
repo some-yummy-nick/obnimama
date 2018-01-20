@@ -6,7 +6,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport"
-				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Title</title>
 	<style>
 		@font-face {
@@ -20,35 +20,43 @@
 		}
 
 		.font-marketsans .geometria {
-			font-family: "Geometria", "Helvetica Neue", Helvetica, Arial, Roboto, sans-serif
+			font-family: "Geometria", Roboto, Arial, sans-serif;
 		}
 	</style><!--загрузка кастомных шрифтов -->
 	<script>
-    var useCustomFont = ('fontDisplay' in document.documentElement.style) ||
-      (localStorage && localStorage.getItem('ebay-font'));
-    if (useCustomFont) {
-      document.documentElement.classList.add('font-marketsans');
-    }
+		var useCustomFont = ('fontDisplay' in document.documentElement.style) ||
+			(localStorage && localStorage.getItem('ebay-font'));
+		if (useCustomFont) {
+			document.documentElement.classList.add('font-marketsans');
+		}
 	</script><!--загрузка кастомных шрифтов -->
 	<link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+
+<!--start wrapper-->
 <div class="wrapper">
+
+	<!--start content-->
 	<div class="content">
+
+		<!--start header-->
 		<header class="header geometria">
 			<div class="container">
 				<div class="header__blocks">
 					<div class="header__block">
 						<div class="logo">
 							<a class="logo__link" href="#" title="Перейти на главную страницу">
-								<img class="logo__pic" src="http://via.placeholder.com/150x80" alt="Перейти на главную страницу">
+								<img class="logo__pic" src="http://via.placeholder.com/150x80"
+								     alt="Перейти на главную страницу">
 							</a>
 						</div>
 					</div>
 					<div class="header__block header__block_wide">
 						<button class="hamburger" id="js-hamburger" aria-expanded="false">
 					<span
-							class="hamburger__screen-reader-text">Меню</span>
+						class="hamburger__screen-reader-text">Меню</span>
 
 						</button>
 						<div class="menu" id="js-menu" aria-expanded="false">
@@ -91,11 +99,20 @@
 				</div>
 			</div>
 		</header>
+		<!--end header-->
+
 	</div>
-	<footer class="footer" id="footer">
-		<div   class="container">footer</div>
+	<!--end content-->
+
+	<!--start footer-->
+	<footer class="footer">
+		<div class="container">footer</div>
 	</footer>
+	<!--end footer-->
+
 </div>
+<!--end wrapper-->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
 <script src="js/lib.js"></script>
