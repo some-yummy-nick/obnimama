@@ -20,10 +20,10 @@
 		background-size: contain;
 
 		&_vk {
-			background-image: inline("images/base64/vk.svg");
+			background-image: inline("../images/base64/vk.svg");
 
 			&:hover {
-				background-image: inline("images/base64/vk-hover.svg");
+				background-image: inline("../images/base64/vk-hover.svg");
 			}
 		}
 

@@ -9,7 +9,6 @@
 		"dest": "gulp build",
 		"sprite": "svg-sprite-generate -d ./images/svg/ -o ./images/sprite.svg",
 		"scss": "gulp clean && gulp scsscomb && gulp scss",
-		"push": "npm run scss && git push",
 		"deploy": "gh-pages -d build"
 	},
 	"keywords": [],
