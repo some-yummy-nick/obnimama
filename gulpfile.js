@@ -136,7 +136,7 @@ function html() {
 
 function js() {
 	return gulp.src(paths.js.src)
-		.pipe(gulp.dest(paths.js.build))
+		.pipe($.changed(paths.js.build))
 		.pipe(browserSync.stream());
 }
 
