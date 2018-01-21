@@ -1,5 +1,6 @@
 const gulp = require("gulp"),
-	browserSync = require("browser-sync").create();
+	browserSync = require("browser-sync").create(),
+	del = require('del');
 
 const $ = require("gulp-load-plugins")({
 	pattern: ["*"],
@@ -14,10 +15,9 @@ var NODE_ENV = process.env.NODE_ENV || 'development';
 
 var paths = {
 	styles: {
-		src: 'source/scss/my/style.scss',
-		all: 'source/scss/my/*.scss',
-		my: 'source/scss/my/*.scss',
-		csscomb: 'source/scss',
+		src: 'source/styles/style.scss',
+		all: 'source/styles/*.scss',
+		scsscomb: 'source/scss',
 		build: 'build/css'
 	},
 	html: {
@@ -72,15 +72,20 @@ function styles() {
 }
 
 gulp.task('scsscomb', function () {
-	return gulp.src(paths.styles.my)
+	return gulp.src(paths.styles.all)
 		.pipe($.plumber({errorHandler: onError}))
 		.pipe($.csscomb())
-		.pipe(gulp.dest(paths.styles.csscomb))
+		.pipe(gulp.dest(paths.styles.scsscomb))
 });
 
-gulp.task('copyScss',gulp.series('scsscomb'), function () {
+gulp.task('scss', function () {
 	return gulp.src("source/scss/*.scss")
-		.pipe(gulp.dest("source/scss/my"))
+		.pipe(gulp.dest("source/styles"))
+});
+
+gulp.task('clean', function () {
+	return gulp.src('source/scss/')
+		.pipe($.clean());
 });
 
 function images() {
