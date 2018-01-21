@@ -14,13 +14,11 @@ body {
 	line-height: 1.42;
 	font-family: $font;
 	color: $color;
-
 	scroll-behavior: smooth;
 }
 
 a {
 	color: $link_color;
-
 	text-decoration-skip: ink;
 
 	&:hover {
@@ -30,7 +28,7 @@ a {
 }
 
 .break:after {
-	// ������ ������ ������ ������������� br
+	// line break br
 	content: "\A";
 	white-space: pre;
 }

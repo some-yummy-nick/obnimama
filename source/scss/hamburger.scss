@@ -1,5 +1,5 @@
 :root {
-	--hamburger-color: #000000;
+	--hamburger-color: #000;
 	--hamburger-height: 20px;
 	--hamburger-height-line: 2px;
 	--hamburger-width: 40px;
@@ -12,7 +12,7 @@
 	height: var(--hamburger-height);
 	padding: 1em;
 	font-size: 0.875em;
-	color: #ffffff;
+	color: #fff;
 	text-transform: uppercase;
 	background: none;
 	border: none;
@@ -38,8 +38,7 @@
 	}
 
 	&::after {
-		box-shadow: 0 calc(var(--hamburger-height) / 2) 0 0 var(--hamburger-color),
-		0 calc(var(--hamburger-height) / -2) 0 0 var(--hamburger-color);
+		box-shadow: 0 calc(var(--hamburger-height) / 2) 0 0 var(--hamburger-color), 0 calc(var(--hamburger-height) / -2) 0 0 var(--hamburger-color);
 	}
 
 	/* Text meant only for screen readers. */

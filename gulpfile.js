@@ -75,6 +75,7 @@ gulp.task('scsscomb', function () {
 	return gulp.src(paths.styles.all)
 		.pipe($.plumber({errorHandler: onError}))
 		.pipe($.csscomb())
+		.pipe($.stylefmt())
 		.pipe(gulp.dest(paths.styles.scsscomb))
 });
 

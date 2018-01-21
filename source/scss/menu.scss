@@ -12,7 +12,7 @@
 		display: block;
 		padding: 5px 10px;
 		font-weight: 700;
-		color: rgba(#000000,0.8);
+		color: rgba(#000, 0.8);
 
 		&:hover {
 			color: #014c8c;
@@ -29,7 +29,7 @@
 
 		&.active {
 			z-index: 10;
-			background: #ffffff;
+			background: #fff;
 			transform: scale(1);
 		}
 
