@@ -24,6 +24,7 @@
 		outline: thin dotted;
 		outline-offset: -2px;
 	}
+
 	&::before,
 	&::after {
 		content: "";
@@ -35,6 +36,7 @@
 		background-color: var(--hamburger-color);
 		transition: all 0.3s;
 	}
+
 	&::after {
 		box-shadow: 0 calc(var(--hamburger-height) / 2) 0 0 var(--hamburger-color),
 		0 calc(var(--hamburger-height) / -2) 0 0 var(--hamburger-color);
@@ -54,6 +56,7 @@
 			box-shadow: none;
 			transform: rotate(45deg);
 		}
+
 		&::before {
 			transform: rotate(-45deg);
 		}
@@ -68,4 +71,3 @@
 		display: inline-block;
 	}
 }
-
