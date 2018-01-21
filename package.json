@@ -8,6 +8,7 @@
 		"build": "set NODE_ENV=production&&npm run dest",
 		"dest": "gulp build",
 		"sprite": "svg-sprite-generate -d ./images/svg/ -o ./images/sprite.svg",
+		"push": "gulp copy && git push",
 		"deploy": "gh-pages -d build"
 	},
 	"keywords": [],
@@ -20,6 +21,8 @@
 		"gh-pages": "^1.1.0",
 		"gulp": "^4.0.0",
 		"gulp-cache": "^1.0.2",
+		"gulp-copy": "^1.1.0",
+		"gulp-csscomb": "^3.0.8",
 		"gulp-if": "^2.0.2",
 		"gulp-imagemin": "^4.1.0",
 		"gulp-jsbeautifier": "^2.1.2",
@@ -37,7 +40,7 @@
 		"postcss-easysprites": "^0.1.8",
 		"postcss-font-magician": "^2.1.0",
 		"postcss-rgb-plz": "^2.0.2"
-    },
+	},
 	"browserslist": [
 		"last 10 versions",
 		">5%",

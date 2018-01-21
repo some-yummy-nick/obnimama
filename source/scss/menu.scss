@@ -1,18 +1,18 @@
 .menu {
-
 	&__list {
+		display: flex;
+		justify-content: space-around;
 		margin: 0;
 		padding: 0;
 		list-style-type: none;
-		display: flex;
-		justify-content: space-around;
 	}
 
 	&__link {
 		display: block;
+		width: 30px;
 		padding: 5px 10px;
-		color: rgba(#000,0.8);
 		font-weight: 700;
+		color: rgba(#000000,0.8);
 
 		&:hover {
 			color: #014c8c;
@@ -25,12 +25,12 @@
 		left: 0;
 		width: 100%;
 		transform: scale(0);
-		transition:transform 0.3s;
+		transition: transform 0.3s;
 
 		&.active {
-			transform: scale(1);
-			background: #fff;
 			z-index: 10;
+			background: #ffffff;
+			transform: scale(1);
 		}
 
 		&__list {
