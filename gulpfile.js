@@ -14,8 +14,10 @@ var NODE_ENV = process.env.NODE_ENV || 'development';
 
 var paths = {
 	styles: {
-		src: 'source/scss/style.scss',
-		all: 'source/scss/*.scss',
+		src: 'source/scss/my/style.scss',
+		all: 'source/scss/my/*.scss',
+		my: 'source/scss/my/*.scss',
+		csscomb: 'source/scss',
 		build: 'build/css'
 	},
 	html: {
@@ -58,14 +60,28 @@ function styles() {
 				}),
 				require('postcss-css-variables'),
 				require('postcss-rgb-plz'),
+
 				require("css-mqpacker")({
 					sort: true
 				})
 			])
 		)
+		.pipe($.csscomb())
 		.pipe(gulp.dest(paths.styles.build))
 		.pipe(browserSync.stream());
 }
+
+gulp.task('scsscomb', function () {
+	return gulp.src(paths.styles.my)
+		.pipe($.plumber({errorHandler: onError}))
+		.pipe($.csscomb())
+		.pipe(gulp.dest(paths.styles.csscomb))
+});
+
+gulp.task('copyScss',gulp.series('scsscomb'), function () {
+	return gulp.src("source/scss/*.scss")
+		.pipe(gulp.dest("source/scss/my"))
+});
 
 function images() {
 	return gulp.src(paths.images.src)

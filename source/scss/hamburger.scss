@@ -1,8 +1,8 @@
 :root {
-	--hamburger-color: #000;
-	--hamburger-width: 40px;
+	--hamburger-color: #000000;
 	--hamburger-height: 20px;
 	--hamburger-height-line: 2px;
+	--hamburger-width: 40px;
 }
 
 .hamburger {
@@ -10,15 +10,15 @@
 	display: none;
 	width: var(--hamburger-width);
 	height: var(--hamburger-height);
+	padding: 1em;
+	font-size: 0.875em;
+	color: #ffffff;
+	text-transform: uppercase;
+	background: none;
 	border: none;
 	border-radius: 0;
-	background: none;
-	color: #fff;
 	cursor: pointer;
-	padding: 1em;
-	text-transform: uppercase;
 	transition: all 0.25s ease-in-out;
-	font-size: 0.875em;
 
 	&:focus {
 		outline: thin dotted;
@@ -26,12 +26,12 @@
 	}
 	&::before,
 	&::after {
-		content: '';
+		content: "";
 		position: absolute;
-		height: var(--hamburger-height-line);
-		width: 100%;
 		top: calc(var(--hamburger-height) / 2);
 		left: 0;
+		width: 100%;
+		height: var(--hamburger-height-line);
 		background-color: var(--hamburger-color);
 		transition: all 0.3s;
 	}
@@ -42,17 +42,17 @@
 
 	/* Text meant only for screen readers. */
 	&__screen-reader-text {
-		clip: rect(1px, 1px, 1px, 1px);
 		position: absolute !important;
-		height: 1px;
 		width: 1px;
+		height: 1px;
 		overflow: hidden;
+		clip: rect(1px, 1px, 1px, 1px);
 	}
 
 	&.opened {
 		&::after {
-			transform: rotate(45deg);
 			box-shadow: none;
+			transform: rotate(45deg);
 		}
 		&::before {
 			transform: rotate(-45deg);
@@ -60,8 +60,8 @@
 	}
 
 	@media screen and (max-width: $screen-xs) {
-		--hamburger-width: 30px;
 		--hamburger-height: 15px;
+		--hamburger-width: 30px;
 	}
 
 	@media screen and (max-width: $screen-sm) {

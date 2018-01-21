@@ -1,46 +1,45 @@
-.social{
-
-	&__list{
+.social {
+	&__list {
 		margin: 0;
 		padding: 0;
 		list-style-type: none;
 	}
 
-	&__item{
+	&__item {
 		display: inline-block;
-		vertical-align: middle;
-		height: 30px;
 		width: 30px;
+		height: 30px;
+		vertical-align: middle;
 	}
 
-	&__link{
+	&__link {
 		display: block;
 		height: 100%;
 		text-indent: -9999px;
 		background-repeat: no-repeat;
 		background-size: contain;
 
-		&_vk{
-			background-image: inline('images/base64/vk.svg');
+		&_vk {
+			background-image: inline("images/base64/vk.svg");
 
-			&:hover{
-				background-image:inline('images/base64/vk-hover.svg');
+			&:hover {
+				background-image: inline("images/base64/vk-hover.svg");
 			}
 		}
 
-		&_fb{
-			background-image: url('https://icongr.am/simple/facebook.svg');
+		&_fb {
+			background-image: url("https://icongr.am/simple/facebook.svg");
 
-			&:hover{
-				background-image: url('https://icongr.am/simple/facebook.svg?colored');
+			&:hover {
+				background-image: url("https://icongr.am/simple/facebook.svg?colored");
 			}
 		}
 
-		&_youtube{
-			background-image: url('https://icongr.am/simple/youtube.svg');
+		&_youtube {
+			background-image: url("https://icongr.am/simple/youtube.svg");
 
-			&:hover{
-				background-image: url('https://icongr.am/simple/youtube.svg?colored');
+			&:hover {
+				background-image: url("https://icongr.am/simple/youtube.svg?colored");
 			}
 		}
 	}

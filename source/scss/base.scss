@@ -3,35 +3,38 @@ body {
 	height: 100%;
 }
 
-html{
-	background-color:$background;
+html {
+	background-color: $background;
 }
 
-body{
-	font-family: $font;
+body {
+	overflow-x: hidden;
+	font-weight: 400;
 	font-size: $font-size;
 	line-height: 1.42;
+	font-family: $font;
 	color: $color;
-	font-weight: 400;
+
 	scroll-behavior: smooth;
-	overflow-x: hidden;
 }
 
-a{
+a {
 	color: $link_color;
+
 	text-decoration-skip: ink;
 
-	&:hover{
-		text-decoration: none;
+	&:hover {
 		color: $link_color_hover;
+		text-decoration: none;
 	}
 }
 
-.break:after { // разрыв строки вместо использования br
-	content: '\A';
+.break:after {
+	// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ br
+	content: "\A";
 	white-space: pre;
 }
 
-svg{
+svg {
 	fill: currentColor;
 }
