@@ -10,6 +10,15 @@ function setEqualHeight(columns) {
   columns.height(tallestcolumn);
 }
 
+function addPhoneMask(elements) {
+	var phones = document.querySelectorAll(elements);
+	Array.prototype.forEach.call(phones, function(child) {
+		var mask = new IMask(child,{
+			mask: '{8}(000)000-00-00'
+		});
+	});
+}
+
 function scrollLinks(links) {
   links.click(function () {
     if ($(this).attr("href") == "" || $(this).attr("href") == "#" || $(this).attr("href") == "javascript:void(0)") {
