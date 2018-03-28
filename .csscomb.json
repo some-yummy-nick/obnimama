@@ -1,10 +1,5 @@
 {
-  "exclude": [
-    ".git/**",
-    "node_modules/**"
-  ],
-
-  "remove-empty-rulesets": true,
+  "exclude": [".git/**", "node_modules/**"],
   "always-semicolon": true,
   "color-case": "lower",
   "block-indent": "\t",
@@ -13,7 +8,6 @@
   "eof-newline": true,
   "leading-zero": true,
   "quotes": "double",
-  "sort-order-fallback": "abc",
   "space-before-colon": "",
   "space-after-colon": " ",
   "space-before-combinator": " ",

@@ -1,72 +1,69 @@
 :root {
-	--hamburger-color: #000;
-	--hamburger-height: 20px;
-	--hamburger-height-line: 2px;
-	--hamburger-width: 40px;
+    --hamburger-color: #000;
+    --hamburger-height: 20px;
+    --hamburger-height-line: 2px;
+    --hamburger-width: 40px;
 }
-
+  
 .hamburger {
-	position: relative;
-	display: none;
-	width: var(--hamburger-width);
-	height: var(--hamburger-height);
-	padding: 1em;
-	font-size: 0.875em;
-	color: #fff;
-	text-transform: uppercase;
-	background: none;
-	border: none;
-	border-radius: 0;
-	cursor: pointer;
-	transition: all 0.25s ease-in-out;
+    position: relative; 
+    display: none;
+    width: var(--hamburger-width);
+    height: var(--hamburger-height);
+    padding: 1em;
+    font-size: 0.875em;
+    color: #fff;
+    text-transform: uppercase;
+    background: none;
+    border: none; 
+    border-radius: 0;
+    
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+ 
+    &:focus { 
+        outline: thin dotted;
+        outline-offset: -2px; 
+    } 
+    
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: calc(var(--hamburger-height) / 2);
+        left: 0;
+        width: 100%;
+        height: var(--hamburger-height-line);
+        background-color: var(--hamburger-color);
+        transition: all 0.3s;
+    } 
+    &::after {
+        box-shadow: 0 calc(var(--hamburger-height) / 2) 0 0 var(--hamburger-color), 0 calc(var(--hamburger-height) / -2) 0 0 var(--hamburger-color);
+    }
+    /* Text meant only for screen readers. */
+    &__screen-reader-text {
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(1px, 1px, 1px, 1px);
+    } 
+    &.opened {
+        &::after {
+            box-shadow: none;
+            transform: rotate(45deg);
+        }
+        &::before {
+            transform: rotate(-45deg);
+        }
+    } 
 
-	&:focus {
-		outline: thin dotted;
-		outline-offset: -2px;
-	}
-
-	&::before,
-	&::after {
-		content: "";
-		position: absolute;
-		top: calc(var(--hamburger-height) / 2);
-		left: 0;
-		width: 100%;
-		height: var(--hamburger-height-line);
-		background-color: var(--hamburger-color);
-		transition: all 0.3s;
-	}
-
-	&::after {
-		box-shadow: 0 calc(var(--hamburger-height) / 2) 0 0 var(--hamburger-color), 0 calc(var(--hamburger-height) / -2) 0 0 var(--hamburger-color);
-	}
-
-	/* Text meant only for screen readers. */
-	&__screen-reader-text {
-		position: absolute !important;
-		width: 1px;
-		height: 1px;
-		overflow: hidden;
-		clip: rect(1px, 1px, 1px, 1px);
-	}
-
-	&.opened {
-		&::after {
-			box-shadow: none;
-			transform: rotate(45deg);
-		}
-
-		&::before {
-			transform: rotate(-45deg);
-		}
-	}
-
-	@media screen and (max-width: $screen-xs) {
-		--hamburger-height: 15px;
-		--hamburger-width: 30px;
-	}
-
-	@media screen and (max-width: $screen-sm) {
-		display: inline-block;
-	}
+    @media screen and (max-width: $screen-xs) {
+        --hamburger-height: 15px;
+        --hamburger-width: 30px;
+    }
+    
+    @media screen and (max-width: $screen-sm) {
+        display: inline-block;
+    }
 }

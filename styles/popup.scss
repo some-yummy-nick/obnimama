@@ -1,21 +1,22 @@
 .popup {
 	position: fixed;
-	overflow-x: hidden;
-	overflow-y: scroll;
 	top: 0;
 	left: 0;
+	z-index: 1200;
 	width: 100%;
 	height: 100%;
-	z-index: 1200;
+	overflow-x: hidden;
+	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
-	-moz-overflow-scrolling: touch;
-	-o-overflow-scrolling: touch;
-	-ms-overflow-scrolling: touch;
-	overflow-scrolling: touch;
-	opacity: 0;
-	pointer-events: none;
 	background: rgba(24, 17, 34, 0.7);
+	opacity: 0;
 	transition: opacity 500ms;
+	pointer-events: none;
+
+	   -moz-overflow-scrolling: touch;
+	     -o-overflow-scrolling: touch;
+	    -ms-overflow-scrolling: touch;
+	        overflow-scrolling: touch;
 
 	&_active {
 		opacity: 1;
@@ -24,8 +25,8 @@
 
 	&__overlay {
 		position: absolute;
-		left: 0;
 		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
 	}
@@ -38,40 +39,40 @@
 	}
 
 	&__cell {
-		height: 100%;
 		display: table-cell;
+		height: 100%;
 		vertical-align: middle;
 		text-align: center;
 	}
 
 	&__block {
-		background: #fff;
-		padding: 20px;
-		display: inline-block;
-		text-align: left;
 		position: relative;
+		display: inline-block;
+		padding: 20px;
+		text-align: left;
+		background: #ffffff;
 	}
 
 	&__close {
-		display: none;
 		position: absolute;
 		top: 0;
 		right: 0;
+		z-index: 2;
+		display: none;
 		width: 30px;
 		height: 30px;
 		cursor: pointer;
-		z-index: 2;
 
 		&:before,
 		&:after {
-			position: absolute;
-			left: 50%;
-			margin: -1px 0 0 -8px;
-			top: 50%;
-			height: 2px;
-			width: 16px;
-			background: #000;
 			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 16px;
+			height: 2px;
+			margin: -1px 0 0 -8px;
+			background: #000000;
 			transform-origin: 50% 50%;
 		}
 
@@ -97,9 +98,10 @@
 	&__body_hidden {
 		overflow: hidden;
 		-webkit-overflow-scrolling: auto;
-		-moz-overflow-scrolling: auto;
-		-o-overflow-scrolling: auto;
-		-ms-overflow-scrolling: auto;
-		overflow-scrolling: auto;
+
+		   -moz-overflow-scrolling: auto;
+		     -o-overflow-scrolling: auto;
+		    -ms-overflow-scrolling: auto;
+		        overflow-scrolling: auto;
 	}
 }
