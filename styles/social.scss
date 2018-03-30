@@ -27,9 +27,9 @@
 			}
 		}
 
-		&_fb {
+		&_fb { 
 			background-image: url("https://icongr.am/simple/facebook.svg");
-
+  
 			&:hover {
 				background-image: url("https://icongr.am/simple/facebook.svg?colored");
 			}
@@ -39,8 +39,9 @@
 			background-image: url("https://icongr.am/simple/youtube.svg");
 
 			&:hover {
-				background-image: url("https://icongr.am/simple/youtube.svg?colored");
+				background-image: url("https://icongr.am/simple/youtube.svg?colored"); 
 			}
+		
 		}
-	}
+	}	
 }

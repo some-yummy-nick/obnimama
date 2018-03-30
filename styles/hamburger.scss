@@ -37,9 +37,11 @@
         background-color: var(--hamburger-color);
         transition: all 0.3s;
     } 
+
     &::after {
         box-shadow: 0 calc(var(--hamburger-height) / 2) 0 0 var(--hamburger-color), 0 calc(var(--hamburger-height) / -2) 0 0 var(--hamburger-color);
     }
+
     /* Text meant only for screen readers. */
     &__screen-reader-text {
         position: absolute !important;
@@ -48,22 +50,26 @@
         overflow: hidden;
         clip: rect(1px, 1px, 1px, 1px);
     } 
+
     &.opened {
+
         &::after {
             box-shadow: none;
             transform: rotate(45deg);
         }
+
         &::before {
             transform: rotate(-45deg);
         }
-    } 
+    }
 
     @media screen and (max-width: $screen-xs) {
         --hamburger-height: 15px;
         --hamburger-width: 30px;
-    }
-    
+    } 
+     
     @media screen and (max-width: $screen-sm) {
         display: inline-block;
     }
+
 }
