@@ -38,7 +38,7 @@ function addVoidForLinks(links) {
   });
 }
 
-//Доступный hamburger https://foxland.fi/simple-accessible-svg-menu-hamburger-animation
+//a11y hamburger https://foxland.fi/simple-accessible-svg-menu-hamburger-animation
 function hamburger(element, menu) {
   var button = document.getElementById(element),
     menu = document.getElementById(menu);
