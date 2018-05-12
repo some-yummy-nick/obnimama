@@ -14,9 +14,9 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"autoprefixer": "^7.2.5",
-		"browser-sync": "^2.23.5",
-		"css-mqpacker": "^6.0.1",
+		"autoprefixer": "^7.2.6",
+		"browser-sync": "^2.24.4",
+		"css-mqpacker": "^6.0.2",
 		"eslint": "^4.19.1",
 		"gh-pages": "^1.1.0",
 		"gulp": "^4.0.0",
@@ -31,17 +31,17 @@
 		"gulp-newer": "^1.4.0",
 		"gulp-plumber": "^1.2.0",
 		"gulp-postcss": "^7.0.1",
-		"gulp-sass": "^3.1.0",
+		"gulp-sass": "^3.2.1",
 		"gulp-stylefmt": "^1.1.0",
 		"gulp-webp": "^3.0.0",
 		"imagemin-jpeg-recompress": "^5.1.0",
 		"imagemin-jpegtran": "^5.0.2",
-		"imagemin-pngquant": "^5.0.1",
+		"imagemin-pngquant": "^5.1.0",
 		"imagemin-svgo": "^6.0.0",
 		"postcss-assets": "^5.0.0",
-		"postcss-css-variables": "^0.8.0",
-		"postcss-easysprites": "^0.1.8",
-		"postcss-font-magician": "^2.1.0",
+		"postcss-css-variables": "^0.8.1",
+		"postcss-easysprites": "^0.1.9",
+		"postcss-font-magician": "^2.1.1",
 		"postcss-rgb-plz": "^2.0.2"
 	},
 	"browserslist": [
@@ -49,5 +49,8 @@
 		">5%",
 		"IE 11",
 		"iOS >= 8"
-	]
+	],
+	"dependencies": {
+		"npm": "^6.0.1"
+	}
 }

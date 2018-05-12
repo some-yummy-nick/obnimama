@@ -2,7 +2,7 @@
   font-family: Roboto;
   font-weight: 400;
   font-style: normal;
-  src: url(//fonts.gstatic.com/s/roboto/v16/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2'), url(//fonts.gstatic.com/s/roboto/v16/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff'), url(//fonts.gstatic.com/s/roboto/v16/zN7GBFwfMP4uA6AR0HCoLQ.ttf) format('truetype');
+  src: url(//fonts.gstatic.com/s/roboto/v18/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2'), url(//fonts.gstatic.com/s/roboto/v18/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff'), url(//fonts.gstatic.com/s/roboto/v18/zN7GBFwfMP4uA6AR0HCoLQ.ttf) format('truetype');
 }
 
 @font-face {
@@ -874,6 +874,7 @@ textarea {
 }
 
 .social__item {
+  font-size: 18px;
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -881,6 +882,7 @@ textarea {
 }
 
 .social__link {
+  font-size: 18px;
   display: block;
   height: 100%;
   text-indent: -9999px;
