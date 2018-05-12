@@ -1,15 +1,6 @@
 @import "utils/variables";
 @import "utils/mixins";
-@import "reboot";
-@import "base";
-@import "wrapper";
-@import "content";
-@import "container";
-@import "header";
-@import "logo";
-@import "hamburger";
-@import "menu";
-@import "popup";
-@import "footer";
-@import "social";
+@import "base/reboot";
+@import "base/base";
+@import "users/*";
  

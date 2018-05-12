@@ -35,17 +35,16 @@ var paths = {
 function styles() {
 	return gulp.src(paths.styles.src)
 		.pipe($.plumber({errorHandler: onError}))
+		.pipe($.sassGlob({
+			ignorePaths: [
+				'styles/utils/**',
+				'styles/base/**',
+			]
+		}))
 		.pipe($.sass())
 		.pipe($.postcss([
 				require("postcss-assets")({
 					loadPaths: ["images/"]
-				}),
-				require("postcss-font-magician")({
-					variants: {
-						"Roboto": {
-							"400": ['woff2, woff, ttf'] //поддержка кирилицы
-						}
-					}
 				}),
 				require("autoprefixer"),
 				require("postcss-easysprites")({
