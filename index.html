@@ -24,8 +24,7 @@
 		}
 	</style>
 	<link rel="stylesheet" href="css/style.css">
-	<script defer src="js/intersection-observer.js"></script>
-	<script defer src="js/lazy.js"></script>
+	<script defer src="js/lazysizes.min.js"></script>
 	<script defer src="js/lib.js"></script>
 	<script defer src="js/imask.min.js"></script>
 	<script defer src="js/popup.min.js"></script>
@@ -104,15 +103,22 @@
 		<main>
 			<style>
 				.images {
-					padding-top: 1000px;
+					padding-top: 2000px;
 				}
 			</style>
 
 			<button class="js-modal-link">modal-link</button>
 			<div class="images">
-				<img class="lazy" src="http://via.placeholder.com/1366x768" data-src="images/1.jpg" alt="">
-				<img class="lazy" src="http://via.placeholder.com/2560x1600" data-src="images/2.jpg" alt="">
-				<img class="lazy" src="http://via.placeholder.com/1360x768" data-src="images/3.jpg" alt="">
+
+				<img class="lazyload" src="http://via.placeholder.com/2560x1600" data-src="images/2.jpg" alt="">
+				<picture>
+					<source srcset="http://via.placeholder.com/1366x768" data-srcset="images/compost.webp"
+					        type="image/webp">
+					<source srcset="http://via.placeholder.com/1366x768"
+					        data-srcset="http://via.placeholder.com/1366x768" type="image/jpg">
+					<img class="lazyload" src="http://via.placeholder.com/1366x768" data-src="images/1.jpg" alt="">
+				</picture>
+				<img class="lazyload" src="http://via.placeholder.com/1360x768" data-src="images/3.jpg" alt="">
 			</div>
 		</main>
 
