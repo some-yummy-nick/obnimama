@@ -17,7 +17,7 @@ var NODE_ENV = process.env.NODE_ENV || 'development';
 var paths = {
 	styles: {
 		src: 'styles/style.scss',
-		all: 'styles/*.scss',
+		all: 'styles/**/*.scss',
 		build: 'css'
 	},
 	html: {
@@ -55,7 +55,7 @@ function styles() {
 				require('postcss-rgb-plz'),
 
 				require("css-mqpacker")({
-					sort: true
+					sort: sortMediaQueries
 				})
 			])
 		)
@@ -117,3 +117,39 @@ gulp.watch("js/**/*.js").on("change", reload);
 gulp.watch(paths.styles.all).on("change", styles);
 
 gulp.task('default', gulp.series(gulp.parallel('server', images, styles)));
+
+function isMax(mq) {
+	return /max-width/.test(mq);
+}
+
+function isMin(mq) {
+	return /min-width/.test(mq);
+}
+
+function sortMediaQueries(a, b) {
+
+	let A = a.replace(/\D/g, '');
+
+	let B = b.replace(/\D/g, '');
+
+	if (isMax(a) && isMax(b)) {
+
+		return B - A;
+
+	} else if (isMin(a) && isMin(b)) {
+
+		return A - B;
+
+	} else if (isMax(a) && isMin(b)) {
+
+		return 1;
+
+	} else if (isMin(a) && isMax(b)) {
+
+		return -1;
+
+	}
+
+	return 1;
+
+}

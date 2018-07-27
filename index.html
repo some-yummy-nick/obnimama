@@ -19,30 +19,17 @@
 			font-display: optional;
 		}
 
-		.font-marketsans .geometria {
+		body {
 			font-family: "Geometria", Roboto, Arial, sans-serif;
 		}
 	</style>
-	<!--загрузка кастомных шрифтов -->
-	<script>
-		var useCustomFont = ('fontDisplay' in document.documentElement.style) ||
-			(localStorage && localStorage.getItem('ebay-font'));
-		if (useCustomFont) {
-			document.documentElement.classList.add('font-marketsans');
-		}
-	</script>
-	<!--загрузка кастомных шрифтов -->
 	<link rel="stylesheet" href="css/style.css">
-
-	<script defer src="js/fontloader.js"></script>
 	<script defer src="js/intersection-observer.js"></script>
 	<script defer src="js/lazy.js"></script>
 	<script defer src="js/lib.js"></script>
 	<script defer src="js/imask.min.js"></script>
 	<script defer src="js/popup.min.js"></script>
 	<script defer src="js/script.js"></script>
-
-	<!--загрузка кастомных шрифтов -->
 	<script defer src="js/modernizr-custom.js"></script>
 	<!--поддержка формата изображений webp-->
 </head>
@@ -116,13 +103,15 @@
 
 		<main>
 			<style>
-				.images{
+				.images {
 					padding-top: 1000px;
 				}
 			</style>
+
+			<button class="js-modal-link">modal-link</button>
 			<div class="images">
 				<img class="lazy" src="http://via.placeholder.com/1366x768" data-src="images/1.jpg" alt="">
-				<img class="lazy" src="http://via.placeholder.com/2560x1600"  data-src="images/2.jpg" alt="">
+				<img class="lazy" src="http://via.placeholder.com/2560x1600" data-src="images/2.jpg" alt="">
 				<img class="lazy" src="http://via.placeholder.com/1360x768" data-src="images/3.jpg" alt="">
 			</div>
 		</main>
@@ -137,6 +126,7 @@
 
 </div>
 <!--end wrapper-->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
 </body>

@@ -13,11 +13,11 @@ html {
 body {
 	overflow-x: hidden;
 	font-weight: 400;
-	font-size: $font-size;
-	line-height: 1.42;
-	font-family: $font;
 	color: $color;
 	scroll-behavior: smooth;
+	overflow-y: scroll;
+	background-color: $background;
+	-webkit-overflow-scrolling: touch;
 }
 
 a {
@@ -26,6 +26,11 @@ a {
 	&:hover {
 		color: $link_color_hover;
 		text-decoration: none;
+	}
+
+	&:focus{
+		text-decoration: none;
+		color: currentColor;
 	}
 }
 
@@ -89,4 +94,9 @@ textarea {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+input,
+textarea {
+	background-clip: padding-box;
 }
