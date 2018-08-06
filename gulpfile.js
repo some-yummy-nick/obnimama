@@ -52,8 +52,6 @@ function styles() {
 					spritePath: "images"
 				}),
 				require('postcss-css-variables'),
-				require('postcss-rgb-plz'),
-
 				require("css-mqpacker")({
 					sort: sortMediaQueries
 				})
@@ -61,6 +59,7 @@ function styles() {
 		)
 		.pipe($.csscomb())
 		.pipe($.stylefmt())
+		.pipe($.cleanCss())
 		.pipe(gulp.dest(paths.styles.build))
 		.pipe(browserSync.stream());
 }

@@ -22,6 +22,7 @@
 		"gulp": "^4.0.0",
 		"gulp-cache": "^1.0.2",
 		"gulp-clean": "^0.4.0",
+		"gulp-clean-css": "^3.9.4",
 		"gulp-copy": "^1.1.0",
 		"gulp-csscomb": "^3.0.8",
 		"gulp-if": "^2.0.2",
@@ -42,8 +43,7 @@
 		"postcss-assets": "^5.0.0",
 		"postcss-css-variables": "^0.8.1",
 		"postcss-easysprites": "^0.1.9",
-		"postcss-font-magician": "^2.1.1",
-		"postcss-rgb-plz": "^2.0.2"
+		"postcss-font-magician": "^2.1.1"
 	},
 	"browserslist": [
 		"last 4 versions",

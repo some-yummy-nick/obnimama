@@ -41,7 +41,8 @@
 			padding-bottom: 10px;
 		}
 
-		&__item + &__item { 
+		&__item + &__item {
+			margin-left: 0;
 			margin-top: 10px;
 		}
 	}

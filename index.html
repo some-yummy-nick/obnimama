@@ -19,7 +19,7 @@
 			font-display: optional;
 		}
 
-		body {
+		body.body {
 			font-family: "Geometria", Roboto, Arial, sans-serif;
 		}
 	</style>
@@ -30,10 +30,9 @@
 	<script defer src="js/popup.min.js"></script>
 	<script defer src="js/script.js"></script>
 	<script defer src="js/modernizr-custom.js"></script>
-	<!--поддержка формата изображений webp-->
 </head>
 
-<body>
+<body class="body">
 
 <!--start wrapper-->
 <div class="wrapper">
@@ -42,7 +41,7 @@
 	<div class="content">
 
 		<!--start header-->
-		<header class="header geometria">
+		<header class="header">
 			<div class="container">
 				<div class="header__blocks">
 					<div class="header__block">
@@ -101,11 +100,6 @@
 		<!--end header-->
 
 		<main>
-			<style>
-				.images {
-					padding-top: 2000px;
-				}
-			</style>
 
 			<button class="js-modal-link">modal-link</button>
 			<div class="images">

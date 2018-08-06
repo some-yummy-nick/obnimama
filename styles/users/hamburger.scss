@@ -63,13 +63,13 @@
         }
     }
 
-    @media screen and (max-width: $screen-xs) {
-        --hamburger-height: 15px;
-        --hamburger-width: 30px;
-    } 
-     
     @media screen and (max-width: $screen-sm) {
         display: inline-block;
     }
+
+	@media screen and (max-width: $screen-xs) {
+		--hamburger-height: 15px;
+		--hamburger-width: 30px;
+	}
 
 }
