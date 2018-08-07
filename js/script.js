@@ -3,7 +3,6 @@ var globalPopup;
 $(document).ready(function () {
 	globalPopup = new Popup();
 	addVoidForLinks($("a"));
-	scrollLinks($(".js-scroll"));
 	setEqualHeight($(".row>.col"));
 	hamburger('js-hamburger', "js-menu");
 	addPhoneMask('.js-phone');// https://unmanner.github.io/imaskjs/guide.html
