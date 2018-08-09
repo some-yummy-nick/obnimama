@@ -1,0 +1,134 @@
+.select2-container {
+
+	.select2-selection {
+		height: auto;
+		display: block;
+		border-radius: 33.5px;
+		border: 1px solid rgba(255, 255, 255, 0.5);
+		padding: 10px 15px;
+
+		&:focus {
+			outline: none;
+			border-style: dashed;
+		}
+	}
+
+	&--focus {
+
+		.select2-selection {
+			outline: none;
+			border-style: dashed;
+		}
+	}
+
+	&--open {
+
+		.select2-selection {
+			outline: none;
+			border-style: solid !important;
+		}
+	}
+
+}
+
+.select2-container--open.select2-container--below {
+
+	.select2-selection {
+		border-radius: 33.5px 33.5px 0 0;
+	}
+}
+
+.select2-container--open.select2-container--above {
+
+	.select2-selection {
+		border-radius: 0 0  33.5px 33.5px;
+	}
+}
+
+.select2-container--basket {
+	margin-bottom: 10px;
+	display: block;
+	width: 100% !important;
+	text-align: center;
+
+	&.select2-container--open .select2-selection .select2-selection__arrow b {
+		transform: rotate(-135deg);
+		top: 21px;
+	}
+
+	.select2-selection {
+
+		.select2-selection__arrow b {
+			position: absolute;
+			right: 20px;
+			top: 17px;
+			width: 8px;
+			height: 8px;
+			border-right: 2px solid rgba(255, 255, 255, 0.5);
+			border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+			transform: rotate(45deg);
+		}
+	}
+}
+
+.select2-container--hour {
+	width: 123px !important;
+	margin-right: 10px;
+
+	.select2-selection {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px 20px;
+
+		.select2-selection__arrow {
+			display: inline-block;
+			vertical-align: middle;
+
+			b {
+
+				&::after {
+					content: ":";
+					font-weight: 400;
+				}
+			}
+		}
+
+		.select2-selection__rendered {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+	}
+
+}
+
+.select2-container--minute {
+	width: 123px !important;
+
+	.select2-selection {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px 20px;
+	}
+
+}
+
+.select2-dropdown {
+	background: #25327B;
+	border-radius: 0 0 33.5px 33.5px;
+}
+
+.select2-results__option {
+	padding: 13px 20px;
+	color: #ffffff;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+
+
+	&--highlighted {
+		background: #666FA2;
+		border-color: #fff;
+	}
+}

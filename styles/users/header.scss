@@ -1,5 +1,13 @@
 .header {
 	position: relative;
+	padding-top: 26px;
+	min-height: 100vh;
+	overflow: hidden;
+
+	&__wrapper{
+		position: relative;
+		z-index: 1;
+	}
 
 	&__blocks {
 		display: flex;
@@ -7,18 +15,17 @@
 		align-items: center;
 	}
 
-	&__block {
-		&_wide {
-			flex-grow: 1;
-		}
+	&::after {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 200%;
+		height: 200%;
+		border-radius: 50%;
+		left: 50%;
+		top: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		background-image: radial-gradient(circle 937px at 50% 98.84%, #bae6fb 0%, #00b9f2 100%);
 	}
 
-	@media screen and (max-width: $screen-sm) {
-		&__block {
-			&_wide {
-				flex-grow: inherit;
-				order: 1;
-			}
-		}
-	}
 }

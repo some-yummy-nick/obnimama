@@ -7,22 +7,33 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport"
 	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Title</title>
+	<title>Obnimama</title>
 	<style>
 		@font-face {
-			font-family: "Geometria";
-			src: url('css/fonts/Geometria/Geometria.woff2') format('woff2'),
-			url('css/fonts/Geometria/Geometria.woff') format('woff'),
-			url('css/fonts/Geometria/Geometria.ttf') format('truetype');
+			font-family: "Iskra";
+			src: url('css/fonts/Iskra/IskraBold.woff2') format('woff2'),
+			url('css/fonts/Iskra/IskraBold.woff') format('woff'),
+			url('css/fonts/Iskra/IskraBold.ttf') format('truetype');
+			font-weight: 700;
+			font-style: normal;
+			font-display: optional;
+		}
+
+		@font-face {
+			font-family: "Iskra";
+			src: url('css/fonts/Iskra/IskraReg.woff2') format('woff2'),
+			url('css/fonts/Iskra/IskraReg.woff') format('woff'),
+			url('css/fonts/Iskra/IskraReg.ttf') format('truetype');
 			font-weight: normal;
 			font-style: normal;
 			font-display: optional;
 		}
 
 		body.body {
-			font-family: "Geometria", Roboto, Arial, sans-serif;
+			font-family: "Iskra", Roboto, Arial, sans-serif;
 		}
 	</style>
+	<link rel="stylesheet" href="css/select2.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script defer src="js/modernizr-custom.js"></script>
 	<script defer src="js/lazysizes.min.js"></script>
@@ -30,91 +41,615 @@
 	<script defer src="js/lib.js"></script>
 	<script defer src="js/smoothscroll.min.js"></script>
 	<script defer src="js/modaal.min.js"></script>
+	<script defer src="js/select2.min.js"></script>
+	<script defer src="js/baron.js"></script>
 	<script defer src="js/script.js"></script>
 </head>
 
 <body class="body">
-
-<!--start wrapper-->
-<div class="wrapper">
-
-	<!--start content-->
-	<div class="content">
+<div class="content">
+	<div class="main">
 
 		<!--start header-->
 		<header class="header">
 			<div class="container">
-				<div class="header__blocks">
-					<div class="header__block">
-						<div class="logo">
-							<a class="logo__link" href="#" title="Перейти на главную страницу">
-								<img class="logo__pic" src="http://via.placeholder.com/150x80"
-								     alt="Перейти на главную страницу">
+				<div class="header__wrapper">
+					<div class="header__blocks">
+						<div class="header__block">
+							<div class="logo">
+								<a class="logo__link" href="#" title="Перейти на главную страницу">
+									<img class="logo__pic" src="images/logo.svg" width="183" height="71"
+									     alt="Перейти на главную страницу">
+								</a>
+							</div>
+						</div>
+
+						<div class="header__block">
+							<a href="ajax/callback.html" class="button js-modaal-question button_transparent">Есть
+								вопрос?
 							</a>
 						</div>
 					</div>
-					<div class="header__block header__block_wide">
-						<button class="hamburger" id="js-hamburger" aria-expanded="false">
-							<span class="hamburger__screen-reader-text">Меню</span>
-
-						</button>
-						<div class="menu" id="js-menu" aria-expanded="false">
-							<nav>
-								<ul class="menu__list">
-									<li class="menu__item">
-										<a class="menu__link" href="#">Продукты</a>
-									</li>
-									<li class="menu__item">
-										<a class="menu__link" href="#">Корзина</a>
-									</li>
-									<li class="menu__item">
-										<a class="menu__link" href="#">Доставка</a>
-									</li>
-									<li class="menu__item">
-										<a class="menu__link" href="#">Руководство</a>
-									</li>
-									<li class="menu__item">
-										<a class="menu__link" href="#">Контакты</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
+				</div>
+				<!--start promo-->
+				<div class="promo">
+					<h1 class="promo__title">Детское питание по подписке</h1>
+					<div class="promo__main">
+						Выбери нужный набор продуктов и получай его каждый месяц с хорошей скидкой. Чем больше
+						продуктов,
+						тем больше скидка!
 					</div>
-					<div class="header__block header__block_mobile">
-						<div class="social">
-							<ul class="social__list">
-								<li class="social__item">
-									<a class="social__link social__link_vk" href="#">В контакте</a>
-								</li>
-								<li class="social__item">
-									<a class="social__link social__link_fb" href="#">Facebook</a>
-								</li>
-								<li class="social__item">
-									<a class="social__link social__link_youtube" href="#">Youtube</a>
-								</li>
-							</ul>
+					<div class="promo__items">
+						<div class="promo__item promo__item_amount">
+							<div class="promo__text">
+								Укажите сколько творожков вам нужно привозить ежемесячно
+							</div>
+						</div>
+						<div class="promo__item promo__item_day">
+							<div class="promo__text">
+								Выберите день, в который
+								вы будете встречать курьера
+							</div>
+						</div>
+						<div class="promo__item promo__item_contact">
+							<div class="promo__text">
+								Оставьте ваши контактные данные, телефон и номер
+								карты
+							</div>
 						</div>
 					</div>
 				</div>
+				<!--end promo-->
 			</div>
 		</header>
 		<!--end header-->
 
 		<main>
-			<a href="ajax/modal.php" class="modaal-ajax">Show</a>
+			<!--start products-->
+			<div class="products">
+				<div class="products__row">
+					<!--start products__col-->
+					<div class="products__col">
+						<div class="products__item js-product">
+							<a href="ajax/product.html" class="js-product-modal">
+								<div class="products__inner">
+									<div class="products__image">
+										<img src="images/products-image-1.jpg" alt="Адамилк">
+									</div>
+									<div class="products__title js-product-title">Адамилк</div>
+									<div class="products__text">смесь молочная адаптированная, 3,5%,&nbsp;200&nbsp;гр.
+									</div>
+								</div>
+								<div class="products__hover">
+									<div class="products__amount js-amount">
+										<button type="button" disabled class="products__minus js-basket-minus disabled">
+											-
+										</button>
+										<div class="products__field">
+											<div class="products__field-stuff"><span class="js-basket-stuff">0</span> шт
+											</div>
+											<div class="products__field-price"><span class="js-basket-price">25</span> ₽
+											</div>
+										</div>
+										<button type="button" class="products__plus js-basket-plus">+</button>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<!--end products__col-->
+					<!--start products__col-->
+					<div class="products__col">
+						<div class="products__item js-product">
+							<div class="products__inner">
+								<div class="products__image">
+									<img src="images/products-image-1.jpg" alt="Адамилк">
+								</div>
+								<div class="products__title js-product-title">Адамилк-2</div>
+								<div class="products__text">смесь молочная адаптированная, 3,5%,&nbsp;200&nbsp;гр.</div>
+							</div>
+							<div class="products__hover">
+								<div class="products__amount js-amount">
+									<button type="button" disabled class="products__minus js-basket-minus disabled">-
+									</button>
+									<div class="products__field">
+										<div class="products__field-stuff"><span class="js-basket-stuff">0</span> шт
+										</div>
+										<div class="products__field-price"><span class="js-basket-price">25</span> ₽
+										</div>
+									</div>
+									<button type="button" class="products__plus js-basket-plus">+</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!--end products__col-->
+					<!--start products__col-->
+					<div class="products__col">
+						<div class="products__item js-product">
+							<div class="products__inner">
+								<div class="products__image">
+									<img src="images/products-image-3.jpg" alt="Молоко">
+								</div>
+								<div class="products__title js-product-title">Молоко</div>
+								<div class="products__text">для детей, обогащенное семью витаминами, 3,2%,&nbsp;200&nbsp;гр.</div>
+							</div>
+							<div class="products__hover">
+								<div class="products__amount js-amount">
+									<button type="button" disabled class="products__minus js-basket-minus disabled">-
+									</button>
+									<div class="products__field">
+										<div class="products__field-stuff"><span class="js-basket-stuff">0</span> шт
+										</div>
+										<div class="products__field-price"><span class="js-basket-price">25</span> ₽
+										</div>
+									</div>
+									<button type="button" class="products__plus js-basket-plus">+</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!--end products__col-->
+					<!--start products__col-->
+					<div class="products__col">
+						<div class="products__item js-product">
+							<div class="products__inner">
+								<div class="products__image">
+									<img src="images/products-image-4.jpg" alt="Кефир">
+								</div>
+								<div class="products__title js-product-title">Кефир</div>
+								<div class="products__text">смесь молочная адаптированная, 3,2%,&nbsp;200&nbsp;гр.</div>
+							</div>
+							<div class="products__hover">
+								<div class="products__amount js-amount">
+									<button type="button" disabled class="products__minus js-basket-minus disabled">-
+									</button>
+									<div class="products__field">
+										<div class="products__field-stuff"><span class="js-basket-stuff">0</span> шт
+										</div>
+										<div class="products__field-price"><span class="js-basket-price">25</span> ₽
+										</div>
+									</div>
+									<button type="button" class="products__plus js-basket-plus">+</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!--end products__col-->
+					<!--start products__col-->
+					<div class="products__col">
+						<div class="products__item js-product">
+							<div class="products__inner">
+								<div class="products__image">
+									<img src="images/products-image-5.jpg" alt="Творог Классический">
+								</div>
+								<div class="products__title js-product-title">Творог Классический</div>
+								<div class="products__text">смесь молочная адаптированная, 3,2%,&nbsp;200&nbsp;гр.</div>
+							</div>
+							<div class="products__hover">
+								<div class="products__amount js-amount">
+									<button type="button" disabled class="products__minus js-basket-minus disabled">-
+									</button>
+									<div class="products__field">
+										<div class="products__field-stuff"><span class="js-basket-stuff">0</span> шт
+										</div>
+										<div class="products__field-price"><span class="js-basket-price">25</span> ₽
+										</div>
+									</div>
+									<button type="button" class="products__plus js-basket-plus">+</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!--end products__col-->
+					<!--start products__col-->
+					<div class="products__col">
+						<div class="products__item js-product">
+							<div class="products__inner">
+								<div class="products__image">
+									<img src="images/products-image-6.jpg" alt="Творог Классический">
+								</div>
+								<div class="products__title js-product-title">Творог Банан-яблоко</div>
+								<div class="products__text">для детей, обогащенное семью витаминами, 3,2%,&nbsp;200&nbsp;гр.</div>
+							</div>
+							<div class="products__hover">
+								<div class="products__amount js-amount">
+									<button type="button" disabled class="products__minus js-basket-minus disabled">-
+									</button>
+									<div class="products__field">
+										<div class="products__field-stuff"><span class="js-basket-stuff">0</span> шт
+										</div>
+										<div class="products__field-price"><span class="js-basket-price">25</span> ₽
+										</div>
+									</div>
+									<button type="button" class="products__plus js-basket-plus">+</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!--end products__col-->
+					<!--start products__col-->
+					<div class="products__col">
+						<div class="products__item js-product">
+							<div class="products__inner">
+								<div class="products__image">
+									<img src="images/products-image-7.jpg" alt="Творог Черника">
+								</div>
+								<div class="products__title js-product-title">Творог Черника</div>
+								<div class="products__text">для детей, обогащенное семью витаминами, 3,2%,&nbsp;200&nbsp;гр.</div>
+							</div>
+							<div class="products__hover">
+								<div class="products__amount js-amount">
+									<button type="button" disabled class="products__minus js-basket-minus disabled">-
+									</button>
+									<div class="products__field">
+										<div class="products__field-stuff"><span class="js-basket-stuff">0</span> шт
+										</div>
+										<div class="products__field-price"><span class="js-basket-price">25</span> ₽
+										</div>
+									</div>
+									<button type="button" class="products__plus js-basket-plus">+</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!--end products__col-->
+					<!--start products__col-->
+					<div class="products__col">
+						<div class="products__item js-product">
+							<div class="products__inner">
+								<div class="products__image">
+									<img src="images/products-image-8.jpg" alt="Творог Абрикос-морковь">
+								</div>
+								<div class="products__title js-product-title">Творог Абрикос-морковь</div>
+								<div class="products__text">смесь молочная адаптированная, 3,2%,&nbsp;200&nbsp;гр.</div>
+							</div>
+							<div class="products__hover">
+								<div class="products__amount js-amount">
+									<button type="button" disabled class="products__minus js-basket-minus disabled">-
+									</button>
+									<div class="products__field">
+										<div class="products__field-stuff"><span class="js-basket-stuff">0</span> шт
+										</div>
+										<div class="products__field-price"><span class="js-basket-price">25</span> ₽
+										</div>
+									</div>
+									<button type="button" class="products__plus js-basket-plus">+</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!--end products__col-->
+					<!--start products__col-->
+					<div class="products__col">
+						<div class="products__item js-product">
+							<div class="products__inner">
+								<div class="products__image">
+									<img src="images/products-image-9.jpg" alt="Творог Груша">
+								</div>
+								<div class="products__title js-product-title">Творог Груша</div>
+								<div class="products__text">для детей, обогащенное семью витаминами, 3,2%,&nbsp;200&nbsp;гр.</div>
+							</div>
+							<div class="products__hover">
+								<div class="products__amount js-amount">
+									<button type="button" disabled class="products__minus js-basket-minus disabled">-
+									</button>
+									<div class="products__field">
+										<div class="products__field-stuff"><span class="js-basket-stuff">0</span> шт
+										</div>
+										<div class="products__field-price"><span class="js-basket-price">25</span> ₽
+										</div>
+									</div>
+									<button type="button" class="products__plus js-basket-plus">+</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!--end products__col-->
+				</div>
+			</div>
+			<!--end products-->
+
+			<!-- start accordion -->
+			<div class="accordion js-accordion" aria-label="fag" role="tablist" aria-multiselectable="true">
+				<div class="accordion__wrapper">
+					<div class="accordion__title">Ответы на популярные вопросы</div>
+					<div class="accordion__block js-accordion__block">
+						<button type="button" class="accordion__button js-accordion__button" role="tab"
+						        aria-selected="true">
+							Как можно оплатить?
+						</button>
+						<div class="accordion__content js-accordion__content" role="tabpanel">
+							После регистрации первые 15 дней вы бесплатно работаете в тарифе Business. Мы поможем
+							заполнить меню и начать продавать, пришлем обучающие видео и статьи, ответим на все вопросы.
+							Вы сможете выбрать другой тариф и оплатить подписку в любой день бесплатного периода.
+							Неиспользованные бесплатные дни добавятся к сроку вашей подписки.
+						</div>
+					</div>
+					<div class="accordion__block js-accordion__block">
+						<button type="button" class="accordion__button js-accordion__button" role="tab">
+							Как отменить подписку?
+						</button>
+						<div class="accordion__content js-accordion__content" role="tabpanel">Lorem ipsum
+							dolor sit amet, consectetur adipisicing elit. Aliquam aperiam aspernatur aut commodi
+							consectetur, dolorum ea eius eum ex magni mollitia natus neque nobis numquam quis sed
+							tenetur
+							totam, velit?
+						</div>
+					</div>
+					<div class="accordion__block js-accordion__block">
+						<button type="button" class="accordion__button js-accordion__button" role="tab">
+							Как изменить дату или время подписки?
+						</button>
+						<div class="accordion__content js-accordion__content" role="tabpanel">Lorem ipsum
+							dolor sit amet, consectetur adipisicing elit. Aliquam aperiam aspernatur aut commodi
+							consectetur, dolorum ea eius eum ex magni mollitia natus neque nobis numquam quis sed
+							tenetur
+							totam, velit?
+						</div>
+					</div>
+					<div class="accordion__block js-accordion__block">
+						<button type="button" class="accordion__button js-accordion__button" role="tab">
+							Как можно оплатить?
+						</button>
+						<div class="accordion__content js-accordion__content" role="tabpanel">Lorem ipsum
+							dolor sit amet, consectetur adipisicing elit. Aliquam aperiam aspernatur aut commodi
+							consectetur, dolorum ea eius eum ex magni mollitia natus neque nobis numquam quis sed
+							tenetur
+							totam, velit?
+						</div>
+					</div>
+					<div class="accordion__block js-accordion__block">
+						<button type="button" class="accordion__button js-accordion__button" role="tab">
+							Как отменить подписку?
+						</button>
+						<div class="accordion__content js-accordion__content" role="tabpanel">Lorem ipsum
+							dolor sit amet, consectetur adipisicing elit. Aliquam aperiam aspernatur aut commodi
+							consectetur, dolorum ea eius eum ex magni mollitia natus neque nobis numquam quis sed
+							tenetur
+							totam, velit?
+						</div>
+					</div>
+					<div class="accordion__block js-accordion__block">
+						<button type="button" class="accordion__button js-accordion__button" role="tab">
+							Как изменить дату или время подписки?
+						</button>
+						<div class="accordion__content js-accordion__content" role="tabpanel">Lorem ipsum
+							dolor sit amet, consectetur adipisicing elit. Aliquam aperiam aspernatur aut commodi
+							consectetur, dolorum ea eius eum ex magni mollitia natus neque nobis numquam quis sed
+							tenetur
+							totam, velit?
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end accordion -->
+
+			<!-- start footer -->
+			<div class="footer">
+				<div class="container">
+					<div class="footer__wrapper">
+						<div class="footer__left">
+							<div class="footer__center">
+								<div class="footer__logo">
+									<img src="images/zmk.png" alt="">
+								</div>
+								<div class="footer__copyright">© 2018 АО "Зеленодольский <br>молочноперерабатывающий
+									комбинат"
+								</div>
+							</div>
+						</div>
+						<div class="footer__right">
+							<div class="footer__text">
+								<p>** Идеальной пищей для грудного ребенка является молоко матери, продолжайте грудное
+									вскармливание максимально возможное время. Всемирная организация здравоохранения
+									рекомендует исключительно грудное вскармливание в первые шесть месяцев и последующее
+									введение прикорма при продолжении грудного вскармливания. Продолжайте грудное
+									вскармливание как можно дольше после введения прикорма. Для принятия решения о
+									сроках и способе введения прикорма в рацион ребенка необходима консультация
+									специалиста. </p>
+								<br>
+								<p>
+									Сайт не является публичной офертой. <br>
+									Вся информация на сайте носит справочный характер.</p>
+							</div>
+							<div class="footer__links">
+								<a href="#" class="footer__link">Политика конфиденциальности</a>
+								<a href="#" class="footer__link">Пользовательское соглашение</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end footer -->
 		</main>
 
 	</div>
+	<aside class="sidebar">
 
-	<!--start footer-->
-	<footer class="footer">
-		<div class="container">footer</div>
-	</footer>
-	<!--end footer-->
+		<!--start basket-->
+		<div class="basket">
+			<div class="basket__wrapper">
+				<form action="" class="basket__form form">
+					<div class="basket__content">
+						<div class="basket__initial js-basket-initial">
+							<div class="basket__empty">
+								<div class="basket__heading">Ваш заказ пуст</div>
+								<div class="basket__text">Выберите товары из списка и добавьте их в заказ, чтобы узнать
+									стоимость подписки
+								</div>
+							</div>
+						</div>
+						<div class="basket__first js-basket-block js-basket-first hidden">
 
+							<!--start form__block-->
+							<div class="form__block">
+								<div class="basket__title">Выбрано <span class="js-basket-count">6</span> товаров</div>
+								<div class="basket__inner basket__baron">
+									<div class="baron baron__root baron__clipper js-baron">
+										<div class="basket__scroll js-scroll baron__scroller">
+											<ul class="basket__items js-basket-items">
+												<div class="basket__scrollbar js-scrollbar baron__bar"></div>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--end form__block-->
+
+							<!--start form__block-->
+							<div class="form__block">
+								<div class="basket__inner">
+									<div class="basket__subscriptions">
+										<div class="basket__subscription js-basket-subscription">
+											<div class="basket__title">При оплате за 1 месяц</div>
+											<div class="basket__price">
+												<span class="basket__price-big">1986</span>
+												<span class="basket__price-currency">₽/мес.</span>
+											</div>
+										</div>
+										<div class="basket__subscription js-basket-subscription active">
+											<div class="basket__title">При оплате за 6 месяцев</div>
+											<div class="basket__price">
+												<span class="basket__price-big">1600</span>
+												<span class="basket__price-currency">₽/мес.</span>
+												<span class="basket__price-discount">-10%</span>
+											</div>
+											<div class="basket__active"></div>
+										</div>
+										<div class="basket__subscription js-basket-subscription">
+											<div class="basket__title">При оплате за 12 месяцев</div>
+											<div class="basket__price">
+												<span class="basket__price-big">1575</span>
+												<span class="basket__price-currency">₽/мес.</span>
+												<span class="basket__price-discount">-15%</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--end form__block-->
+
+							<div class="basket__title">Курьер приедет к вам</div>
+
+							<!--start form__block-->
+							<div class="form__block">
+								<select name="frequency" class="js-select-basket">
+									<option value="Каждую неделю">Каждую неделю</option>
+									<option value="Дважды в месяц">Дважды в месяц</option>
+									<option value="Раз в месяц">Раз в месяц</option>
+								</select>
+								<select name="when" class="js-select-basket">
+									<option value="По понедельникам">По понедельникам</option>
+									<option value="По вторникам">По вторникам</option>
+									<option value="По средам">По средам</option>
+									<option value="По четвергам">По четвергам</option>
+									<option value="По пятницам">По пятницам</option>
+									<option value="По субботам">По субботам</option>
+									<option value="По воскресеньям">По воскресеньям</option>
+								</select>
+
+								<select name="hour" class="js-select-hour">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+									<option value="11">11</option>
+									<option value="12">12</option>
+									<option value="13">13</option>
+									<option value="14">14</option>
+									<option value="15">15</option>
+									<option value="16">16</option>
+									<option value="17">17</option>
+									<option value="18" selected>18</option>
+									<option value="19">19</option>
+									<option value="20">20</option>
+									<option value="21">21</option>
+									<option value="22">22</option>
+									<option value="23">23</option>
+									<option value="24">24</option>
+								</select>
+
+								<select name="minute" class="js-select-minute">
+									<option value="00">00</option>
+									<option value="15">15</option>
+									<option value="30">30</option>
+									<option value="45">45</option>
+								</select>
+							</div>
+							<!--end form__block-->
+							<button type="button" class="button button_big js-basket-button">Дальше</button>
+							<br><br>
+							<label class="checkbox">
+								<input type="checkbox" required checked class="checkbox__input js-admire"/>
+								<span class="checkbox__custom"></span>
+								<div class="checkbox__block">
+									я согласен с политикой <br>конфиденциальности
+								</div>
+							</label>
+						</div>
+						<div class="basket__second js-basket-block hidden">
+							<!--start form__block-->
+							<div class="form__block">
+								<label class="form__label">
+									<span class="form__label-text">Вас зовут</span>
+									<input type="text" class="form__field js-field" required>
+								</label>
+							</div>
+							<!--end form__block-->
+							<!--start form__block-->
+							<div class="form__block">
+								<label class="form__label">
+									<span class="form__label-text">Ваш телефон</span>
+									<input type="tel" class="form__field js-field js-phone" required>
+								</label>
+							</div>
+							<!--end form__block-->
+							<!--start form__block-->
+							<div class="form__block">
+								<label class="form__label">
+									<span class="form__label-text">Ваш адрес</span>
+									<input type="text" class="form__field js-field" required>
+								</label>
+							</div>
+							<!--end form__block-->
+							<button type="button" class="button button_big js-basket-button">Оплатить</button>
+						</div>
+						<div class="basket__third js-basket-block hidden">
+							<!--start form__block-->
+							<div class="form__block">
+								<div class="basket__end">
+									<div class="basket__heading">Подписка завершена!</div>
+									<div class="basket__text">
+										<p>Вы успешно привязвли карту 4250 XXXX XXX 8910</p>
+										<p>Наш менеджер свяжется с вами в ближайшее время</p>
+									</div>
+								</div>
+								<button type="button" class="button button_big js-basket-close">Закрыть</button>
+							</div>
+							<!--end form__block-->
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--end basket-->
+	</aside>
 </div>
-<!--end wrapper-->
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/jquery.js"><\/script>')</script>
 </body>

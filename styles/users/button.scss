@@ -1,0 +1,51 @@
+.button{
+	color: #ffffff;
+	font-weight: 700;
+	text-align: center;
+	padding: 11px 50.5px;
+	padding-bottom: 13px;
+	border-radius: 34px;
+	background-color: #e0647a;
+	border: 1px solid #e0647a;
+	white-space: nowrap;
+
+	&:hover{
+		color: #ffffff;
+		background-color: #C9596D;
+	}
+
+	&:focus{
+		outline: none;
+		border-style: dashed;
+		border-color:  #25327B;
+		background-color: #C9596D;
+	}
+
+	&:disabled{
+		background-color: gray;
+		border-color: gray;
+	}
+
+	&_transparent{
+		background-color: transparent;
+		border-color:#ffffff;
+
+		&:hover{
+			background-color: rgba(0,0,0,0.2);
+		}
+
+		&:focus{
+			border-color:  #ffffff;
+			background-color: rgba(0,0,0,0.2);
+		}
+
+	}
+
+	&_big{
+		display: block;
+		width: 100%;
+		max-width: 262px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

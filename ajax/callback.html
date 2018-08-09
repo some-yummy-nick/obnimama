@@ -1,0 +1,51 @@
+<div class="callback">
+	<div class="callback__title">Обратная связь</div>
+	<form class="form form_callback">
+		<!--start form__block-->
+		<div class="form__block">
+			<label class="form__label">
+				<span class="form__label-text">Вас зовут</span>
+				<input type="text" class="form__field">
+			</label>
+		</div>
+		<!--end form__block-->
+		<!--start form__block-->
+		<div class="form__block">
+			<label class="form__label">
+				<span class="form__label-text">Ваш телефон</span>
+				<input type="tel" class="form__field js-phone">
+			</label>
+		</div>
+		<!--end form__block-->
+		<!--start form__block-->
+		<div class="form__block">
+			<label class="form__label">
+				<span class="form__label-text">Ваш вопрос</span>
+				<textarea cols="" rows="6" class="form__field"></textarea>
+			</label>
+		</div>
+		<!--end form__block-->
+		<button type="submit" class="button button_big js-callback-button">Отправить</button>
+		<!--<a href="ajax/success.html" class="js-callback-button">Отправить</a>-->
+	</form>
+
+</div>
+<div class="success-popup" style="display: none">
+	<div class="success">
+	<div class="success__title">Сообщение <br>отправлено</div>
+	<div class="success__text">Мы свяжемся с вами <br> в ближайшее время</div>
+</div>
+</div>
+<script>
+
+	$(".js-callback-button").modaal({
+		content_source: '.success-popup',
+		custom_class: "success-popup"
+	});
+
+	$(".js-callback-button").on("click", function () {
+		$('.js-modaal-question').modaal('close');
+	})
+</script>
+
+
